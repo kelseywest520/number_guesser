@@ -1,18 +1,19 @@
 turns=0
-
+import random
+number = random.randint(1, 100)
 for _ in range(5):
-    number=input("guess a number between 1 and 100")
-    number=int(number)
-    if number==40:
-        print("40 is correct")
+    guess=input("guess a number between 1 and 100")
+    guess=int(guess)
+    if guess == number:
+        print("you are correct")
         turns +=1
         print("you have taken {} turns".format(turns))
         break
-    elif number > 40:
-        print("{} is too high".format(number))
+    elif guess > number:
+        print("{} is too high".format(guess))
         turns +=1
         print("you have taken {} turns".format(turns))
     else:
-        print("{} is too low".format(number))
+        print("{} is too low".format(guess))
         turns +=1
         print("you have taken {} turns".format(turns))
